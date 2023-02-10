@@ -11,7 +11,30 @@ import SwiftUI
 struct Mod2FinalTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                
+                    
+                    CreateTank()
+                        .tabItem{
+                            Image(systemName: "cart")
+                            Text("Create Tank")
+                        }
+                    
+                    Orders()
+                        .tabItem{
+                            Image(systemName: "shippingbox")
+                            Text("Orders")
+                        }
+                    
+                   
+                }
+            
+            .accentColor(.blue)
+            
         }
+        
     }
+    
 }
+
+

@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273A19D32995838A0006D77E /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A19D22995838A0006D77E /* Orders.swift */; };
 		27A1C17E299538C9009AFA48 /* Mod2FinalTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C17D299538C9009AFA48 /* Mod2FinalTaskApp.swift */; };
-		27A1C180299538C9009AFA48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C17F299538C9009AFA48 /* ContentView.swift */; };
 		27A1C182299538CF009AFA48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A1C181299538CF009AFA48 /* Assets.xcassets */; };
 		27A1C185299538CF009AFA48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A1C184299538CF009AFA48 /* Preview Assets.xcassets */; };
+		27A1C18C2995391C009AFA48 /* CreateTank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C18B2995391C009AFA48 /* CreateTank.swift */; };
+		27A1C18E29953934009AFA48 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C18D29953934009AFA48 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		273A19D22995838A0006D77E /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		27A1C17A299538C9009AFA48 /* Mod2FinalTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mod2FinalTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A1C17D299538C9009AFA48 /* Mod2FinalTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod2FinalTaskApp.swift; sourceTree = "<group>"; };
-		27A1C17F299538C9009AFA48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27A1C181299538CF009AFA48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27A1C184299538CF009AFA48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27A1C18B2995391C009AFA48 /* CreateTank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTank.swift; sourceTree = "<group>"; };
+		27A1C18D29953934009AFA48 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				27A1C17D299538C9009AFA48 /* Mod2FinalTaskApp.swift */,
-				27A1C17F299538C9009AFA48 /* ContentView.swift */,
+				27A1C18F2995393F009AFA48 /* Model */,
+				27A1C18D29953934009AFA48 /* Model.swift */,
+				27A1C19029953953009AFA48 /* VIEWS */,
+				27A1C18B2995391C009AFA48 /* CreateTank.swift */,
+				273A19D22995838A0006D77E /* Orders.swift */,
 				27A1C181299538CF009AFA48 /* Assets.xcassets */,
 				27A1C183299538CF009AFA48 /* Preview Content */,
 			);
@@ -65,6 +73,20 @@
 				27A1C184299538CF009AFA48 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27A1C18F2995393F009AFA48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27A1C19029953953009AFA48 /* VIEWS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIEWS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A1C180299538C9009AFA48 /* ContentView.swift in Sources */,
+				27A1C18E29953934009AFA48 /* Model.swift in Sources */,
 				27A1C17E299538C9009AFA48 /* Mod2FinalTaskApp.swift in Sources */,
+				27A1C18C2995391C009AFA48 /* CreateTank.swift in Sources */,
+				273A19D32995838A0006D77E /* Orders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
