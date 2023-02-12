@@ -9,28 +9,28 @@ import SwiftUI
 
 struct Orders: View {
     
-    @State var history: [Result] = []
+    @State var priorResults: [Result] = []
     
     var body: some View {
         VStack{
-            Spacer()
-            HStack{
                 Spacer()
                 Text ("YOUR ORDERS")
                     .font(.title)
                     .fontWeight(.bold)
-                Spacer()
-            }
-            List(history.reversed()) { currentResult in
+                
+            
+            List(priorResults.reversed()) { currentResult in
                 HStack{
                     Spacer()
-                    OrderView(priorResult: currentResult)
+                    OrderView(somePriorResult: currentResult)
                     Spacer()
                 }
             }
+            }
+            
         }
     }
-}
+
 
 struct Orders_Previews: PreviewProvider {
     static var previews: some View {

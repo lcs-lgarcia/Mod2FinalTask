@@ -19,7 +19,7 @@ struct CreateTank: View {
     
     let typeground = ["SAND", "ROCK"]
     
-    @State var history: [Result] = []
+    @State var somePriorResult: [Result] = []
     
     @State var lenght: Double = 0.2
     
@@ -174,38 +174,33 @@ struct CreateTank: View {
                 
                 Text("Cost of design:\(Decimal(priceAll).formatted(.number.precision(.significantDigits(3)))) $")
                 
-                Button(action: {
-                    
+               Button(action: {
                     let wid = width
-                    
                     let len = lenght
-                    
                     let hei = height
-                    
                     let name = nameOrder
-                    
                     let price = priceAll
-                    
-                    let latestResult = Result(width: wid, height: hei, lenght: len, price: price, nameOfTheOrder: name)
-                    
-                    history.append(latestResult)
+                    let lastResult = Result(widthvalue: wid, heightvalue: hei, lenghtvalue: len, pricevalue: price, nameOfTheOrder: name)
+                    somePriorResult.append(lastResult)
                 }, label: {
                     Text("Order")
                         .font(.headline.smallCaps())
                 })
-            
                 .buttonStyle(.bordered)
                 .padding()
                 
             }
             .padding(.top, 10)
+           
+            
+            
         }
     }
 }
-
 
 struct CreateTank_Previews: PreviewProvider {
     static var previews: some View {
         CreateTank()
     }
 }
+

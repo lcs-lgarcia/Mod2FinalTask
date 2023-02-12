@@ -10,16 +10,16 @@ import Foundation
 
 struct Result: Identifiable {
     let id = UUID()
-    let width: Double
-    let height: Double
-    let lenght: Double
-    let price: Double
+    let widthvalue: Double
+    let heightvalue: Double
+    let lenghtvalue: Double
+    let pricevalue: Double
     let nameOfTheOrder: String
 }
-    let resultForPreviews = Result(width:
+    let exampleResultForPreviews = Result(widthvalue:
                                     1,
-                                   height:
+                                   heightvalue:
                                     6,
-                                   lenght: 8, price: 8, nameOfTheOrder: "CAC"
+                                   lenghtvalue: 8, pricevalue: 8, nameOfTheOrder: "Order"
                                    )
 

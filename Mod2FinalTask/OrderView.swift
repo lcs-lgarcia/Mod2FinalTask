@@ -9,36 +9,36 @@ import SwiftUI
 
 struct OrderView: View {
     
-    let priorResult: Result
+    let somePriorResult: Result
     
     var body: some View {
         
-        VStack{
-            Text("\(priorResult.nameOfTheOrder)")
+        VStack(alignment: .leading, spacing: 3){
+            
+            Text("\(somePriorResult.nameOfTheOrder)")
             Divider()
             HStack{
                 Text("Length")
-                Text("\(priorResult.lenght)")
+                Text("\(somePriorResult.lenghtvalue)")
             }
             HStack{
                 Text("Width")
-                Text("\(priorResult.width)")
+                Text("\(somePriorResult.widthvalue)")
             }
             HStack{
                 Text("Hight")
-                Text("\(priorResult.height)")
+                Text("\(somePriorResult.heightvalue)")
             }
             HStack{
                 Text("Total price")
-                Text("\(priorResult.price)")
+                Text("\(somePriorResult.pricevalue)")
             }
         }
-        
     }
 }
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView(priorResult: resultForPreviews)
+        OrderView(somePriorResult: exampleResultForPreviews)
     }
 }
