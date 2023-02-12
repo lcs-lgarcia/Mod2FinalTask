@@ -16,15 +16,19 @@ struct OrderView: View {
             HStack{
                 Text("Length")
                 Text("")
-        }
+            }
             HStack{
                 Text("Width")
                 Text("")
-        }
+            }
             HStack{
                 Text("Hight")
                 Text("")
-        }
+            }
+            HStack{
+                Text("Total price")
+                Text("")
+            }
         }
         
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateTank: View {
     
+    @State var nameOrder = ""
     @State var selectedGroundPercentage = 10
     let groundPercentages = [10, 15, 20, 0]
     @State var defaultGroundType = "SAND"
@@ -17,13 +18,13 @@ struct CreateTank: View {
     @State var lenght: Double = 0.2
     @State var height: Double = 0.2
     @State var width: Double = 0.2
-
- 
+    
+    
     let priceSand: Double = 0.79
     let priceMx: Double = 1.46
     let priceRock: Double = 2.07
     
-
+    
     var m3: Double {
         return lenght*height*width
     }
@@ -56,46 +57,67 @@ struct CreateTank: View {
         
     }
     
+    var name: String? {
+        
+        guard nameOrder == nameOrder else {
+            
+            return nil
+        }
+        
+        
+        return nameOrder
+    }
     
     var body: some View {
         ScrollView {
             VStack{
+                
+                
+                
+                HStack(spacing: 5) {
+                    Text("Order name:")
+                        .font(.title2)
+                        .bold()
+                    TextField("...", text: $nameOrder)
+                }
+                .padding()
                 Divider()
                 VStack(spacing:0){
-                    
-                    Text("Height")
-                        .font(.title2)
-                        .bold()
-                    Slider(value: $height,
-                           in: 0.2...10,
-                           label: {Text("radius")},
-                           minimumValueLabel: { Text("0.2") },
-                           maximumValueLabel: { Text("10") })
-                    
-                    Text("\(Decimal(height).formatted(.number.precision(.significantDigits(2)))) m")
-                        .padding()
-                    Text("Width")
-                        .font(.title2)
-                        .bold()
-                    Slider(value: $width,
-                           in: 0.2...10,
-                           label: {Text("width")},
-                           minimumValueLabel: { Text("0.2") },
-                           maximumValueLabel: { Text("10") })
-                    
-                    Text("\(Decimal(width).formatted(.number.precision(.significantDigits(2)))) m")
-                        .padding()
-                    Text("Lenght")
-                        .font(.title2)
-                        .bold()
-                    Slider(value: $lenght,
-                           in: 0.2...10,
-                           label: {Text("lenght")},
-                           minimumValueLabel: { Text("0.2") },
-                           maximumValueLabel: { Text("10") })
-                   
-                    Text("\(Decimal(lenght).formatted(.number.precision(.significantDigits(2)))) m")
-                        .padding()
+                    Group{
+                        Text("Height")
+                            .font(.title2)
+                            .bold()
+                        Slider(value: $height,
+                               in: 0.2...10,
+                               label: {Text("radius")},
+                               minimumValueLabel: { Text("0.2") },
+                               maximumValueLabel: { Text("10") })
+                        
+                        Text("\(Decimal(height).formatted(.number.precision(.significantDigits(2)))) m")
+                            .padding()
+                        Text("Width")
+                            .font(.title2)
+                            .bold()
+                        Slider(value: $width,
+                               in: 0.2...10,
+                               label: {Text("width")},
+                               minimumValueLabel: { Text("0.2") },
+                               maximumValueLabel: { Text("10") })
+                        
+                        Text("\(Decimal(width).formatted(.number.precision(.significantDigits(2)))) m")
+                            .padding()
+                        Text("Lenght")
+                            .font(.title2)
+                            .bold()
+                        Slider(value: $lenght,
+                               in: 0.2...10,
+                               label: {Text("lenght")},
+                               minimumValueLabel: { Text("0.2") },
+                               maximumValueLabel: { Text("10") })
+                        
+                        Text("\(Decimal(lenght).formatted(.number.precision(.significantDigits(2)))) m")
+                            .padding()
+                    }
                     Text("$/m³ = 7.32 ")
                 }
                 
@@ -155,7 +177,9 @@ struct CreateTank: View {
                 Text("Cost of design:\(Decimal(priceAll).formatted(.number.precision(.significantDigits(3)))) $")
                 
                 Button(action: {
-                    let latestResult = Result(weight: 2, height: 2, lenght: 2, order: "seso", nameOfTheOrder: "caca")
+                    
+                    
+                    let latestResult = Result(weight: 2, height: 2, lenght: 2, order: "...", nameOfTheOrder:"...")
                     priorResults.append(latestResult)
                 } ,label: {
                     Text ("Order")
@@ -164,7 +188,7 @@ struct CreateTank: View {
                 .padding()
             }
             .padding(.top, 10)
-            .navigationTitle("CREATE YOUR TANK")
+            
         }
     }
 }
