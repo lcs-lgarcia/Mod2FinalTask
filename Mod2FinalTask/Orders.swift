@@ -9,10 +9,11 @@ import SwiftUI
 
 struct Orders: View {
     
-    @State var priorResults: [Result] = []
+    @State var history: [Result] = []
     
     var body: some View {
         VStack{
+            Spacer()
             HStack{
                 Spacer()
                 Text ("YOUR ORDERS")
@@ -20,8 +21,12 @@ struct Orders: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-            List(priorResults.reversed()) { currentResult in
-                
+            List(history.reversed()) { currentResult in
+                HStack{
+                    Spacer()
+                    OrderView(priorResult: currentResult)
+                    Spacer()
+                }
             }
         }
     }

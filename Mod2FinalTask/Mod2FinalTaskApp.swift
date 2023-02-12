@@ -20,7 +20,7 @@ struct Mod2FinalTaskApp: App {
                             Text("Create Tank")
                         }
                     
-                    Orders()
+                    Orders(history: [])
                         .tabItem{
                             Image(systemName: "shippingbox")
                             Text("Orders")

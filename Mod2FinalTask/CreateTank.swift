@@ -10,20 +10,26 @@ import SwiftUI
 struct CreateTank: View {
     
     @State var nameOrder = ""
+    
     @State var selectedGroundPercentage = 10
+    
     let groundPercentages = [10, 15, 20, 0]
+    
     @State var defaultGroundType = "SAND"
-    let typeground = ["SAND", "ROCK", "MIX"]
-    @State var priorResults: [Result] = []
+    
+    let typeground = ["SAND", "ROCK"]
+    
+    @State var history: [Result] = []
+    
     @State var lenght: Double = 0.2
+    
     @State var height: Double = 0.2
+    
     @State var width: Double = 0.2
     
+    let priceSand: Double = 0.23
     
-    let priceSand: Double = 0.79
-    let priceMx: Double = 1.46
-    let priceRock: Double = 2.07
-    
+    let priceRock: Double = 0.43
     
     var m3: Double {
         return lenght*height*width
@@ -43,13 +49,7 @@ struct CreateTank: View {
         
         guard defaultGroundType == "SAND" else {
             
-            guard defaultGroundType == "ROCK" else {
-                
-                return m3*priceMx*Double(selectedGroundPercentage)
-                
-            }
-            
-            return m3*priceSand*Double(selectedGroundPercentage)
+            return m3*priceRock*Double(selectedGroundPercentage)
             
         }
         
@@ -71,7 +71,6 @@ struct CreateTank: View {
     var body: some View {
         ScrollView {
             VStack{
-                
                 
                 
                 HStack(spacing: 5) {
@@ -143,11 +142,10 @@ struct CreateTank: View {
                            .pickerStyle(.segmented)
                            .padding()
                     HStack{
-                        Text("    0,79$/m³")
+                        Text("      0,23$/m³")
                         Spacer()
-                        Text("2,07$/m³")
-                        Spacer()
-                        Text("1,46$/m³    ")
+                        Text("0,43$/m³      ")
+                        
                     }
                     .padding()
                 }
@@ -178,17 +176,29 @@ struct CreateTank: View {
                 
                 Button(action: {
                     
+                    let wid = width
                     
-                    let latestResult = Result(weight: 2, height: 2, lenght: 2, order: "...", nameOfTheOrder:"...")
-                    priorResults.append(latestResult)
-                } ,label: {
-                    Text ("Order")
+                    let len = lenght
+                    
+                    let hei = height
+                    
+                    let name = nameOrder
+                    
+                    let price = priceAll
+                    
+                    let latestResult = Result(width: wid, height: hei, lenght: len, price: price, nameOfTheOrder: name)
+                    
+                    history.append(latestResult)
+                }, label: {
+                    Text("Order")
+                        .font(.headline.smallCaps())
                 })
+            
                 .buttonStyle(.bordered)
                 .padding()
+                
             }
             .padding(.top, 10)
-            
         }
     }
 }
