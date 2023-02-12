@@ -17,21 +17,43 @@ struct CreateTank: View {
     @State var lenght: Double = 0.2
     @State var height: Double = 0.2
     @State var width: Double = 0.2
-    @State var nameOfTheOrder: String = "Pez"
+
  
+    let priceSand: Double = 0.79
+    let priceMx: Double = 1.46
+    let priceRock: Double = 2.07
     
 
     var m3: Double {
         return lenght*height*width
     }
     var priceTank: Double {
-        return m3*7.23
+        return m3*7.32
     }
     var groundPercentage: Double {
         return Double(selectedGroundPercentage) / 100
     }
     var priceAll: Double {
-        return priceTank+groundPercentage*m3
+        return priceTank+totalWithTypeOfGround
+    }
+    
+    
+    var totalWithTypeOfGround: Double {
+        
+        guard defaultGroundType == "SAND" else {
+            
+            guard defaultGroundType == "ROCK" else {
+                
+                return m3*priceMx*Double(selectedGroundPercentage)
+                
+            }
+            
+            return m3*priceSand*Double(selectedGroundPercentage)
+            
+        }
+        
+        return m3*priceSand*Double(selectedGroundPercentage)
+        
     }
     
     
@@ -99,11 +121,11 @@ struct CreateTank: View {
                            .pickerStyle(.segmented)
                            .padding()
                     HStack{
-                        Text("    2,22$/m³")
+                        Text("    0,79$/m³")
                         Spacer()
-                        Text("4,07$/m³")
+                        Text("2,07$/m³")
                         Spacer()
-                        Text("3,46$/m³    ")
+                        Text("1,46$/m³    ")
                     }
                     .padding()
                 }
